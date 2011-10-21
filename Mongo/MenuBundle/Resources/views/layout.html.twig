@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+{% block stylesheets %}
+	<link href="{{ asset('bundles/mongomenu/css/main.css') }}" type="text/css" rel="stylesheet" />
+	<link href="{{ asset('bundles/mongomenu/css/menu3.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+		
+{% block javascripts %}
+	<script type="text/javascript" src="{{ asset('bundles/mongomenu/js/lib/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('bundles/mongomenu/js/menu.js') }}"></script>
+{% endblock %}
+
+<title>{% block title %}{% endblock %}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div id="page">
+  <div id="header">
+	 {% include 'MongoMenuBundle::menu.html.twig' with {'menu': menu} %}
+  </div>
+ 
+  <div id="content">
+    <h1>{{ block('title') }}</h1>
+    {% block content %}
+    {% endblock %} 
+  </div>
+  
+  <div id="footer">
+    <p>Tous droits réservés © 2011</p>
+  </div>
+</div>
+</body>
+</html>

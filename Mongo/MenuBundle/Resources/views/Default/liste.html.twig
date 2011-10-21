@@ -1,0 +1,30 @@
+{% extends 'MongoMenuBundle::layout.html.twig' %}
+{% block stylesheets %}
+	 {{ parent() }}
+	 <link href="{{ asset('bundles/mongomenu/css/liste.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+{% block title %}Liste Menu{% endblock %}
+{% block content %}
+	<div class="liste-menu">
+		{% if menu %} 
+			<table>
+			<thead><tr><th scope="col">ID</th><th scope="col">Nom menu</th><th scope="col">Position menu</th><th scope="col" colspan="2">Action</th></thead>
+			<tfoot>
+				<tr>
+					<th scope="row">Total</th>
+					<th scope="row" colspan="4"><a href="{{path('formmongocreate')}}"  >Nouveau</a></th>
+				</tr>
+			</tfoot>
+			<tbody>
+			{% for m in  menu %}
+			  <tr {% if loop.index is odd %}class="odd"{% endif %}>
+			  <td>{{ m.id }}</td><td>{{ m.name }}</td><td>{{ m.position }}</td><td><a href="{{path('formmongo', { 'idmenu':  m.id  })}}"  >Modifier</a></td><td><a href="{{path('routedelete', { 'id':  m.id  })}}"  >Supprimer</a></td>
+			  </tr>
+			{% endfor %}
+			</tbody>
+			</table>
+		{% endif %} 
+	</div>
+{% endblock %}
+
+

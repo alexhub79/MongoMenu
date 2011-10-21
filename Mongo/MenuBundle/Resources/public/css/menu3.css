@@ -1,0 +1,85 @@
+img {border: none;}
+
+ul#topnav4 {
+	padding: 0; 
+	list-style: none;	
+	font-size: 1.1em;
+	clear: both;
+	/*float: left;*/
+	width: 520px;
+}
+
+
+/** li de niveau 1 */
+.lisubnav{
+	margin: 0; 
+	padding: 0; 
+	overflow: hidden; 
+	float: left; 
+	height:40px;
+	width:83px;
+}
+.lisubnav:hover{
+	margin: 0; 
+	padding: 0; 
+	overflow: hidden; 
+	float: left; 
+	height:40px;
+	width:83px;
+	background: #1376c9 url(../images/topnav_active.gif) repeat-x;
+}
+
+/* li >a et li > span */
+.alisubnav, .spantopnav{
+	padding: 10px 20px; 
+	float: left; 
+	text-decoration: none; 
+	color: #fff;
+	text-transform: uppercase;
+	clear: both;
+	height: 20px;
+	width:83px;
+	line-height: 20px;
+	background: #1d1d1d; 
+
+}
+.spantopnav{
+	background: url(../images/a_bg.gif) repeat-x left top;
+}
+.alisubnav{
+	color: #555;
+	background: url(../images/a_bg.gif) repeat-x left bottom;
+}
+.item{
+	height:150px
+}
+/* span niveau 2 */
+.subnav {
+	position: absolute;
+	left: 0; 
+	width: 970px;
+	padding: 0px 0px; 
+	display: none;
+	/*clear: both;*/
+	height: 20px;
+}
+.subnav a{
+	padding: 10px 20px; 
+	float: left; 
+	text-decoration: none; 
+	color: #fff;
+	text-transform: uppercase;
+	/*clear: both;*/
+	height: 20px;
+	width : 43px;
+	line-height: 20px;
+	color: #555;
+	background: url(../images/a_bg.gif) repeat-x left bottom;
+
+}
+
+
+
+
+*/
+

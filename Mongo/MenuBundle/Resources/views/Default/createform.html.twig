@@ -1,0 +1,52 @@
+{% extends 'MongoMenuBundle::layout.html.twig' %}
+{% block javascripts %}
+	 {{ parent() }}
+	<script type="text/javascript" src="{{ asset('bundles/mongomenu/js/form.js') }}"></script>
+{% endblock %}
+
+
+{% block stylesheets %}
+	 {{ parent() }}
+	 <link href="{{ asset('bundles/mongomenu/css/form.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+
+{% block title %}Menu{% endblock %}
+	{% block content %}
+		<div class="main-content">
+			<div id="product-form">
+			<form action="{{ path('formmongocreate') }}" method="post" {{ form_enctype(form) }}>
+			
+		
+			
+			<!-- Les erreurs générales du formulaire. -->
+			{{ form_errors(form) }}
+			<a href="#" id="add_tag">Ajouter un tag</a>
+			<div>
+			
+				<!-- Génération du label. -->
+				{{ form_label(form.name, "Nom du menu") }}
+			
+				<!-- Affichage des erreurs pour ce champ précis. -->
+				{{ form_errors(form.name) }}
+			
+				<!-- Génération de l'input. -->
+				{{ form_widget(form.name) }}
+			</div>
+			
+			<!-- Idem pour un autre champ. -->
+			<div>
+				{{ form_label(form.contenu, "Contenu du menu") }}
+				{{ form_errors(form.contenu) }}
+				{{ form_widget(form.contenu) }}
+			</div>
+			
+			<!-- Génération des champs pas encore écrits.
+				 Dans cet exemple, ça serait « date », « pseudo » et « tags »,
+				 mais aussi le champ CSRF (géré automatiquement par Symfony !)
+				 et tous les champs cachés (type « hidden »). -->
+			{{ form_rest(form) }}
+			 <input type="submit" />
+			</div>
+		</div>
+{% endblock %}

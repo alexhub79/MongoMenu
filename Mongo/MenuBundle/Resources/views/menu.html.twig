@@ -1,0 +1,18 @@
+{% if menu %} 
+	<ul id="topnav4" class="v2">
+	{% for m in  menu %}
+	  <li class="lisubnav"><div class="item"><a href="{{path('routeshow', { 'slug':  m.slug  })}}" class="alisubnav">{{ m.name }}</a>
+	 {% if m.contenu %} 
+		<span class="subnav">
+		 {% for item in  m.contenu %}
+			<a href="{{path('routeshow', { 'slug':  item.slug  })}}" class="asubnav">{{item.text}}</a>
+		 {% endfor %}
+		</span>
+	 {% endif %} 
+	  </div>
+	 </li> 
+	{% endfor %}
+	</ul>
+{% endif %} 
+<a href="{{path('listmongo')}}" target="_blank" ><img src="{{ asset('bundles/mongomenu/images/blue_picto_more.gif') }}"  /></a>
+<div style="clear:both" />

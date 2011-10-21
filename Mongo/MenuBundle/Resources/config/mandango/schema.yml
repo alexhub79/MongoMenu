@@ -1,0 +1,16 @@
+Model\MongoMenuBundle\Menu:
+    fields:
+        name:  { type: string, validation: [NotBlank: ~, Type: string] }
+        title: { type: string, validation: [NotBlank: ~, Type: string] }
+        traduc: { type: string, validation: [NotBlank: ~, Type: string] }
+    embeddedsMany:
+        contenu: { class: Model\MongoMenuBundle\Contenu, validation: [NotNull: ~] }
+    behaviors: 
+        - {class: Mandango\Behavior\Sluggable,options: { fromField: title}}      
+        - {class: Mandango\Behavior\Sortable}
+        - {class: Mandango\Behavior\Translatable,options: { TranslateFields: {traduc:traduc}}}       
+Model\MongoMenuBundle\Contenu:
+    isEmbedded: true
+    fields:
+        title: { type: string, validation: [NotBlank: ~, Type: string] }
+        text:  { type: string, validation: [NotBlank: ~, Type: string] }

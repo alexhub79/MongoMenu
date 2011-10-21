@@ -1,0 +1,16 @@
+
+body {
+	margin: 0; padding: 0;
+	font: 10px normal Arial, Helvetica, sans-serif;
+	
+}
+
+#header {
+	background: #ddd ;
+	height:40px;
+	margin-top:100px;
+
+}
+
+#content{
+margin: 80px 0 0 0 ;

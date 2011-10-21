@@ -1,0 +1,6 @@
+#menu_contenu label.required{
+	display:none;
+}
+#menu_contenu .blockembed label.required{
+	display:block;
+}
